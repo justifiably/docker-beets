@@ -1,0 +1,11 @@
+beets:
+  container_name: "beets"
+  restart: unless-stopped
+  image: justifiably/beets
+  ports:
+    - 8337:8337
+  net: host
+  volumes:
+    - /srv/music:/srv/music
+    - /srv/music/beets/:/home/beets/
+  command: "/usr/bin/beet web"
