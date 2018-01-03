@@ -1,9 +1,10 @@
 FROM alpine:edge
 
+# chromaprint needs testing repo
 RUN echo "http://nl.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \ 
     apk update && apk upgrade && apk add --no-cache python3 && \
-    pip3 install beets[fetchart,lastgenre,web] pyacoustid && \
-    apk add --no-cache flac chromaprint gstreamer && \ # chromaprint needs testing repo
+    pip3 install beets[fetchart,lastgenre,web,lyrics] pyacoustid BeautifulSoup4 && \
+    apk add --no-cache flac chromaprint gstreamer && \
     rm -r /root/.cache
 
 ARG PUID=1001
