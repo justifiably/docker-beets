@@ -13,7 +13,7 @@ RUN addgroup -g ${PGID} beets && \
     adduser -D -u ${PUID} -G beets beets
 
 USER beets
-WORKDIR /home/beets
-VOLUME ["/home/beets"]
+WORKDIR /music
+VOLUME ["/music","/home/beets"]
 
 CMD ["/usr/bin/beet"]
