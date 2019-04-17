@@ -1,8 +1,8 @@
 FROM alpine:edge as build-mp3val
 
 # unreliable:
-# wget --no-check-certificate -q "https://downloads.sourceforge.net/mp3val/mp3val-0.1.8-src.tar.gz" 
-ADD mp3val-0.1.8-src.tar.gz /tmp
+RUN wget -q "http://downloads.sourceforge.net/mp3val/mp3val-0.1.8-src.tar.gz" 
+# ADD mp3val-0.1.8-src.tar.gz /tmp
 
 # Recipe from fortes/docker-alpine-mp3val
 RUN apk add --no-cache g++ make
