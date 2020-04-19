@@ -1,4 +1,4 @@
-# docker-beets
+# docker-beets, fully loaded
 
 Alpine based Docker image for [Beets](http://beets.io), media manager for obsessive-compulsives.
 
